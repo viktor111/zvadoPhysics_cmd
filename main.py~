@@ -16,7 +16,7 @@ class Energy_Mass:
 
 
 class Newton_First_Law:
-        def __init__(self, mass, acceleration, info, args):
+	def __init__(self, mass, acceleration, info, args)
 		self.mass = mass
 		self.acceleration = acceleration
 		self.info = "Calculate newtons first law the force of an object by the mass and acceleration"
@@ -27,17 +27,6 @@ class Newton_First_Law:
 		return force
 
 
-class Speed_Distance:
-        def __init__(self, distnace, time): 
-            self.distnace = distnace
-            self.time = time
-            self.info = "Calculate the speed per hour based on distance"
-            self.args = "1- distance, 2- acceleration"
-
-        def calculate(self):
-            result = self.distnace * self.time
-            return result
-
 
 #--- Methods ---
 
@@ -46,6 +35,4 @@ def display_options():
 	print("2. Newtons First Law")
 
 while True:
-    try: 
-        cmd = input()	
-    except  
+	
