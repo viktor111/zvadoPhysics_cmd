@@ -55,6 +55,17 @@ class Acceleration:
         return result
 
 
+class Density:
+    def __init__(self, mass, volume):
+        self.mass = mass
+        self.volume = volume
+        self.info = "Calculate the density of a body"
+        self.args = "1- mass of the body, 2- volume of the body"
+
+    def calculate(self):
+        result = self.mass / self.volume
+        return result
+
 
 # --- Methods ---
 
