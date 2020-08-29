@@ -1,43 +1,43 @@
 import math
-from scipy import constants
-
 
 # --- Equations ---
 
+
 class Energy_Mass:
-    def __init__(self, mass, info, args):
-        self.mass = mass
+    def __init__(self):
         self.speed_of_light = 299792458.0
         self.info = "Calculate the stationary energy of an object by its mass"
         self.args = "1- mass"
+        self.name = "Energy Mass Einstein"
 
-    def calculate(self):
+    @staticmethod
+    def calculate(self, mass):
         speed_of_light_squared = math.sqrt(self.speed_of_light)
-        energy = self.mass * speed_of_light_squared
+        energy = mass * speed_of_light_squared
         return energy
 
 
 class Newton_First_Law:
-    def __init__(self, mass, acceleration, info, args):
-        self.mass = mass
-        self.acceleration = acceleration
+    def __init__(self):
         self.info = "Calculate newtons first law the force of an object by the mass and acceleration"
         self.args = "1- mass, 2- acceleration"
+        self.name = "Newton first law"
 
-    def calculate(self):
-        force = self.mass * self.acceleration
+    @staticmethod
+    def calculate(mass, acceleration):
+        force = mass * acceleration
         return force
 
 
 class Speed_Distance:
-    def __init__(self, distnace, time):
-        self.distnace = distnace
-        self.time = time
+    def __init__(self):
         self.info = "Calculate the speed per hour based on distance"
         self.args = "1- distance, 2- acceleration"
+        self.name = "Speed Distnace"
 
-    def calculate(self):
-        result = self.distnace * self.time
+    @staticmethod
+    def calculate(distnace, time):
+        result = distnace * time
         return result
 
 
@@ -48,31 +48,31 @@ class Acceleration:
         self.time_taken = time_taken
         self.info = "Calculate the acceleration"
         self.args = "1- final_velocity, 2- initial_velocity, 3- time_taken"
+        self.name = "Acceleration"
 
-    def calculate(self):
-        changing_velocity = self.final_velocity / self.initial_velocity
-        result = changing_velocity / self.time_taken
+    @staticmethod
+    def calculate(final_velocity, initial_velocity, time_taken):
+        changing_velocity = final_velocity / initial_velocity
+        result = changing_velocity / time_taken
         return result
 
 
 class Density:
-    def __init__(self, mass, volume):
-        self.mass = mass
-        self.volume = volume
+    def __init__(self):
         self.info = "Calculate the density of a body"
         self.args = "1- mass of the body, 2- volume of the body"
+        self.name = "Density"
 
-    def calculate(self):
-        result = self.mass / self.volume
+    @staticmethod
+    def calculate(mass, volume):
+        result = mass / volume
         return result
 
 
 # --- Methods ---
 
 def display_options():
-    print("1. Einstein mass-energy")
-    print("2. Newtons First Law")
-
+    d = Density().name
 
 while True:
     command = input()
