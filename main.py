@@ -1,5 +1,7 @@
 import math
+from scipy import constants
 
+print(constants.gravitational_constant)
 
 # --- Equations ---
 
@@ -71,6 +73,19 @@ class Density:
         return result
 
 
+class Weight:
+    def __init__(self):
+        self.id = 5
+        self.info = "Force of gravity acting on an object"
+        self.args = "1- mass"
+        self.name = "Weight"
+
+    @staticmethod
+    def calculate(args):
+        result = args[0] * 6.6743e-11
+        return result
+
+
 # --- Methods ---
 
 def display_option_names():
@@ -79,6 +94,7 @@ def display_option_names():
     print("2. " + Speed_Distance().name)
     print("3. " + Acceleration().name)
     print("4. " + Density().name)
+    print("5. " + Weight().name)
 
 
 def display_help():
@@ -90,17 +106,29 @@ def display_help():
 
 
 def display_info(argument):
-    infos = [Energy_Mass().info, Newton_First_Law().info, Speed_Distance().info, Acceleration().info, Density().info]
+    infos = [Energy_Mass().info,
+             Newton_First_Law().info,
+             Speed_Distance().info,
+             Acceleration().info,
+             Density().info,
+             Weight().info]
+
     print(infos[argument])
 
 
 def display_arguments(argument):
-    args = [Energy_Mass().args, Newton_First_Law().args, Speed_Distance().args, Acceleration().args, Density().args]
+    args = [Energy_Mass().args,
+            Newton_First_Law().args,
+            Speed_Distance().args,
+            Acceleration().args,
+            Density().args,
+            Weight().args]
+
     print(args[argument])
 
 
 def calculate_equation(equation_number, args):
-    equations = [Energy_Mass(), Newton_First_Law(), Speed_Distance(), Acceleration(), Density()]
+    equations = [Energy_Mass(), Newton_First_Law(), Speed_Distance(), Acceleration(), Density(), Weight()]
     args_to_num = []
     for number in args:
         n = float(number)
